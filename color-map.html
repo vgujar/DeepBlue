@@ -1,0 +1,111 @@
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA0kGfHtikZ2BbwCdukz6uCFAd4o1UpVv8&sensor=false"></script>
+
+<script type="text/javascript">
+var markers = [
+    {
+        "title": 'SAMTA NAGAR',
+        "lat": '19.166516',
+        "lng": '72.996122',
+        "description": 'SLUM',
+        "type": 'Slum Name'
+    },
+        {
+            "title": 'CTB1',
+            "lat": '19.165746',
+            "lng": '72.995702',
+            "description": 'TOILET AVAILABLE',
+            "type": 'OLD'
+        },
+    {
+        "title": 'CTB2',
+        "lat": '19.167032',
+        "lng": '72.998341',
+        "description": 'TOILET AVAILABLE',
+        "type": 'OLD'
+    },
+        {
+            "title": 'CTB3',
+            "lat": '19.166404',
+            "lng": '72.997763',
+            "description": 'TOILET AVAILABLE',
+            "type": 'OLD'
+        },
+        {
+            "title": 'Open Space',
+            "lat": '19.166104',
+            "lng": ' 72.995700',
+            "description": 'TOILET RECOMMENDED',
+            "type": 'NEW'
+        }
+       
+    ];
+window.onload = function () {
+ 
+    var mapOptions = {
+        center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+        zoom: 8,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var infoWindow = new google.maps.InfoWindow();
+    var latlngbounds = new google.maps.LatLngBounds();
+    var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+    var i = 0;
+    var interval = setInterval(function () {
+        var data = markers[i]
+        var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+        var icon = "";
+        switch (data.type) {
+            case "Slum Name":
+                icon = "red";
+                break;
+            case "OLD":
+                icon = "blue";
+                break;
+            case "NEW":
+                icon = "yellow";
+                break;
+            }
+        icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png";
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: data.title,
+            animation: google.maps.Animation.DROP,
+            icon: new google.maps.MarkerImage(icon)
+        });
+        (function (marker, data) {
+            google.maps.event.addListener(marker, "click", function (e) {
+                infoWindow.setContent(data.description);
+                infoWindow.open(map, marker);
+            });
+        })(marker, data);
+        latlngbounds.extend(marker.position);
+        i++;
+        if (i == markers.length) {
+            clearInterval(interval);
+            var bounds = new google.maps.LatLngBounds();
+            map.setCenter(latlngbounds.getCenter());
+            map.fitBounds(latlngbounds);
+        }
+    }, 80);
+}
+</script>
+<table>
+<tr>
+    <td>
+        <div id="dvMap" style="width: 500px; height: 500px">
+        </div>
+    </td>
+    <td valign="top">
+        <u>Legend:</u><br />
+        <img alt="" src="http://maps.google.com/mapfiles/ms/icons/red.png" />
+        Slum Name<br />
+        <img alt="" src="http://maps.google.com/mapfiles/ms/icons/blue.png" />
+        OLD<br />
+        <img alt="" src="http://maps.google.com/mapfiles/ms/icons/yellow.png" />
+        NEW<br />
+   
+    </td>
+</tr>
+</table>

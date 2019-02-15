@@ -1,0 +1,247 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<style>
+
+.head{
+	margin:1%;	
+}
+</style>
+
+</head>
+<body>
+  <button style="margin: 1%" class="btn btn-success" type="submit" value="Mainpage" name='home' onclick="document.location.href = 'http://localhost/cpt/algo1.php'">SELECT SLUMS</button>
+  
+<button style="margin: 1%" class="btn btn-success" type="submit" value="HOME" name='home' onclick="document.location.href = '/cpt/buttons%20(1).html'">HOME</button>
+
+<h3 class="card-title head">DATA ENTRY FORM</h3>
+<h5 class="card-subtitle mb-2 text-muted head">For Civic Body</h5>
+
+<div class="head"></div>
+<div class="container">
+
+<form action="enterdata.php" method="POST">
+
+<div class="row">
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+   			 <span class="input-group-text" id="basic-addon1">CITY</span>
+		  </div>
+	<input class="form-control" type="text" name="city" id="CITY" required>
+	</div>
+    </div>
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+   			<span class="input-group-text" id="basic-addon1">SLUM NAME</span>
+		  </div>
+	<input class="form-control" type="text" name="SLUM_NAME" id="SLUM_NAME" required>
+	</div>
+    </div>
+ </div>
+
+<div class="row">
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">AREA</span>
+ 		</div>
+	<input class="form-control" type="number" name="AREA" id="AREA" required>
+	</div>
+    </div>
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">POPULATION</span>
+ 		</div>
+	<input class="form-control" type="number" name="POPULATION" id="POPULATION" required>
+	</div>
+    </div>
+ </div>
+
+<div class="row">
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">NO. OF AVAILABLE CTBs</span>
+ 		</div>
+	<input class="form-control" type="number" name="CTB" id="CTB" required>
+	</div>
+    </div>
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">NO. OF PEOPLE USING CTB</span>
+ 		</div>
+	<input class="form-control" type="number" name="NO_OF_PEOPLE_USING_CTB" id="NO_OF_PEOPLE_USING_CTB" required="enter number in required field">
+	</div>
+    </div>
+ </div>
+
+<div class="row">
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">AVAILABILITY OF WATER</span>
+ 		</div>
+	<input class="form-control" type="decimal" name="AVAILABILITY_OF_WATER" id="AVAILABILITY_OF_WATER">
+        <h6 class="card-subtitle mb-2 text-muted head">(Enter range 0.5 to 24hrs)</h6>
+
+
+	</div>
+    </div>
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">NO. OF HOUSEHOLD TOILETS</span>
+ 		</div>
+	<input class="form-control" type="number" name="HOUSEHOLD_TOILETS" id="HOUSEHOLD_TOILETS">
+	</div>
+    </div>
+ </div>
+
+<div class="row">
+    <div class="col">
+     
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1" >OPEN SPACE</span>
+  </div>
+
+    <select id="OPEN_SPACE" name="os" required>
+       <option value=""></option>
+        <option value="YES">YES</option>
+        <option value="NO">NO</option>
+      </select>
+      </div>
+    </div>
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">NO. OF OPEN SPACES</span>
+ 		</div>
+	<input class="form-control" type="number" name="NO_OF_OPEN_SPACE" id="NO_OF_OPEN_SPACE">
+	</div>
+    </div>
+ </div>
+
+<div class="row">
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">LAT</span>
+ 		</div>
+		<input class="form-control" name="LAT" id="LAT" required>
+	</div>
+    </div>
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">LONG</span>
+ 		</div>
+		<input class="form-control" name="LNG" id="LNG" required>
+	</div>
+    </div>
+ </div>
+ 
+   
+<div class="row">
+    <div class="col">
+        <div class="input-group mb-3">
+    <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">CTB NUMBER</span>
+    </div>
+  <input class="form-control" type="number" name="CTB_NAME" id="CTB_NAME" required >
+  </div>
+</div>
+</div>
+
+<div class="input-group mb-3">
+	<div class="input-group-prepend">
+    		<span class="input-group-text" id="basic-addon1" >CTB GENDER USAGE</span>
+ 	</div>
+
+<select id="CTB_GENDER_USAGE" name="ctbg" required>
+	<option value=""></option>
+	<option value="DEDICATED_SEATS_FOR_MEN_AND_WOMEN">DEDICATED SEATS</option>
+	<option value="MIX">MIX</option>
+  <option value="CLOSED">CLOSED</option>
+</select>
+</div>
+
+<div class="row">
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">NUMBER OF MEN SEATS</span>
+ 		</div>
+	<input class="form-control" type="number" name="NUMBER_OF_MEN_SEAT" id="NUMBER_OF_MEN_SEAT">
+    	</div>
+    </div>
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">SEATS NOT IN USE (MEN)</span>
+ 		</div>
+	<input class="form-control" type="number" name="SEAT_NOT_IN_USE1_MEN" id="SEAT_NOT_IN_USE1_MEN">
+	</div>
+    </div>
+ </div>
+
+<div class="row">
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">NUMBER OF WOMEN SEATS</span>
+ 		</div>
+	<input class="form-control" type="number" name="NUMBER_OF_WOMEN_SEAT" id="NUMBER_OF_WOMEN_SEAT">
+	</div>
+    </div>
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">SEATS NOT IN USE (WOMEN)</span>
+ 		</div>
+	<input class="form-control" type="number" name="SEAT_NOT_IN_USE2_WOMEN" id="SEAT_NOT_IN_USE2_WOMEN">
+	</div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="row">
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">NO. OF MIXED SEATS</span>
+ 	</div>
+	<input class="form-control" type="text" name="MIX" id="MIX">
+	</div>
+    </div>
+    <div class="col">
+      	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+    			<span class="input-group-text" id="basic-addon1">SEATS NOT IN USE (MIXED)</span>
+ 		</div>
+	<input class="form-control" type="text" name="SEAT_NOT_IN_USE_MIX" id="SEAT_NOT_IN_USE_MIX)">
+	</div>
+    </div>
+</div>
+
+<div class="form-group">
+<input class="btn btn-primary" type="submit" value="SUBMIT" name='submit' >
+</div>
+
+</div>
+</div>
+</form>
+</div>
+	
+</body>
+</html>
+                       
